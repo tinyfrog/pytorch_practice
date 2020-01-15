@@ -28,3 +28,21 @@ print('num_chars = ', n_characters)
 file = unidecode.unidecode(open('filename').read())
 file_len = len(file)
 # print('file_len =', file_len)
+
+# Random chunk
+def random_chunk():
+    start_index = random.randint(0, file_len - chunk_len)
+    end_index = start_index + chunk_len + 1
+    return file[start_index:end_index]
+
+def char_tensor(string):
+    tensor = torch.zeros(len(string)).long()
+    for c in range(len(string)):
+        tensor[c] = all_characters.index(string[c])
+    return tensor
+
+def random_training_set():
+    chunk = random_chunk()
+    inp = char_tensor(chunk[:-1])
+    target = char_tensor(chunk[1:])
+    return inp, target
