@@ -84,6 +84,7 @@ out,hidden,cell = model(inp,hidden,cell)
 optimizer = torch.optim.Adam(model.parameters(), lr=lr)
 loss_func = nn.CrossEntropyLoss()
 
+# Train
 for i in range(num_epochs):
     total = char_tensor(randum_chunk())
     inp = total[:-1]
