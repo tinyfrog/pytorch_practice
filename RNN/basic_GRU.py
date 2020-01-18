@@ -77,6 +77,7 @@ model = RNN(input_size=n_characters,
             output_size=n_characters,
             num_layers=2)
 
+# Modeling
 inp = char_tensor("A")
 hidden,cell = model.init_hidden()
 out,hidden,cell = model(inp,hidden,cell)
