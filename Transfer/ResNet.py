@@ -2,10 +2,10 @@ import torchvision.models as models
 
 resnet = models.resnet50(pretrained=True) # if pretrained false then initialize as random value
 
-'''
 for name, module in resnet.named_children():
     print(name)
-'''
+    print(module)
+
 
 '''
 layer0 : get pre-trained parameter
